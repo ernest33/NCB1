@@ -11,5 +11,8 @@
     <string name="str_trans">Transparency</string>
     <string name="valid_img">Use this image</string>
     <string name="str_apply">Apply</string>
+    <string name="title_activity_ncb1_setting">Notification Background Image</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="str_def_img">Default background image</string>
 
 </resources>

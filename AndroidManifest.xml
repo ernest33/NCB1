@@ -7,9 +7,9 @@
     <uses-sdk
         android:minSdkVersion="16"
         android:targetSdkVersion="17" />
-<!-- 	<uses-permission  -->
-<!-- 	    android:name="android.permission.ACCESS_SUPERUSER"> -->
-<!-- 	</uses-permission> -->
+    <!-- <uses-permission -->
+    <!-- android:name="android.permission.ACCESS_SUPERUSER"> -->
+    <!-- </uses-permission> -->
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -24,13 +24,12 @@
         <meta-data
             android:name="xposeddescription"
             android:value="Enjoy custom background for the notification panel..." />
-		
+
         <activity
-            android:name="com.ernest33.ncb1.SettingActivity"
-            android:label="@string/title_activity_setting" >
+			android:name="com.ernest33.ncb1.NCB1Setting"
+            android:label="@string/title_activity_ncb1_setting" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
