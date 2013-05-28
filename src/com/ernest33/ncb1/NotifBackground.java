@@ -3,6 +3,7 @@ package com.ernest33.ncb1;
 import android.content.res.XModuleResources;
 import android.content.res.XResources;
 import android.graphics.drawable.Drawable;
+import android.os.Environment;
 import de.robv.android.xposed.IXposedHookInitPackageResources;
 import de.robv.android.xposed.IXposedHookZygoteInit;
 import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResourcesParam;
@@ -10,7 +11,7 @@ import de.robv.android.xposed.XposedBridge;
 
 public class NotifBackground implements IXposedHookZygoteInit, IXposedHookInitPackageResources
 {
-	private static String MODULE_PATH = null;
+	//private static String MODULE_PATH = null;
 	
 	@Override
 	public void handleInitPackageResources(InitPackageResourcesParam resparam) throws Throwable
@@ -28,7 +29,8 @@ public class NotifBackground implements IXposedHookZygoteInit, IXposedHookInitPa
                 @Override
                 public Drawable newDrawable(XResources res, int id) throws Throwable
                 {
-                    return Drawable.createFromPath("/sdcard/notifbg.png");
+                    //return Drawable.createFromPath("/sdcard/notifbg.png");
+                	return Drawable.createFromPath(Environment.getExternalStorageDirectory() + "/notifbg.png");
                 }
             });
         }
@@ -42,7 +44,7 @@ public class NotifBackground implements IXposedHookZygoteInit, IXposedHookInitPa
 	public void initZygote(StartupParam startupParam) throws Throwable
 	{
 		// TODO Auto-generated method stub
-		MODULE_PATH = startupParam.modulePath;
+		//MODULE_PATH = startupParam.modulePath;
 		XModuleResources modRes = XModuleResources.createInstance(startupParam.modulePath, null);
 		XResources.setSystemWideReplacement(
 				"android",

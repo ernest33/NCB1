@@ -1,0 +1,66 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TableLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="top"
+    android:background="@drawable/background_holo_dark"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".NCB1Setting" >
+
+    <Button
+        android:id="@+id/button3"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="select_image"
+        android:text="@string/select_img"
+        android:textColor="@android:color/holo_blue_bright" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="368dp"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_weight="0.57"
+        android:adjustViewBounds="false"
+        android:baselineAlignBottom="false"
+        android:clickable="false"
+        android:contentDescription="@string/str_def_img"
+        android:cropToPadding="false"
+        android:duplicateParentState="false"
+        android:fitsSystemWindows="false"
+        android:focusable="false"
+        android:longClickable="false"
+        android:scrollbarAlwaysDrawVerticalTrack="false"
+        android:src="@drawable/listen_tr" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:text="@string/str_trans"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="256"
+        android:progress="255" />
+
+    <Button
+        android:id="@+id/button2"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="apply_image"
+        android:text="@string/str_apply"
+        android:textColor="@android:color/holo_blue_bright" />
+
+</TableLayout>
