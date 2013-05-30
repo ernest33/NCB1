@@ -17,8 +17,11 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Bitmap.CompressFormat;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.Menu;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -186,14 +189,24 @@ class NCB1Setting extends Activity
 
 	public void select_image(View v)
 	{
+		// First get the vertical and horizontal resolution
+		Display display = ((WindowManager) getSystemService(WINDOW_SERVICE)).getDefaultDisplay();
+		
+		DisplayMetrics dm = new DisplayMetrics();
+		display.getMetrics(dm); 
+		
+		int width = dm.widthPixels;
+		int height = dm.heightPixels;
+
+		// Launch the intent...
 		Intent intent = new Intent();
         intent.setType("image/*");
         intent.putExtra("crop", true);
 		intent.putExtra("scale", true);
-		intent.putExtra("outputX", 720);
-		intent.putExtra("outputY", 1280);
-		intent.putExtra("aspectX", 9);
-		intent.putExtra("aspectY", 16);
+		intent.putExtra("outputX", width);
+		intent.putExtra("outputY", height);
+		intent.putExtra("aspectX", width); // 9
+		intent.putExtra("aspectY", height); // 16
 		File dir = Environment.getExternalStorageDirectory();
 		File output = new File(dir, "notifbg.png");
 		intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(output));
